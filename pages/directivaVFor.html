@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
    
 </head>
 <body>
@@ -16,18 +16,61 @@
             <nav></nav>
             <section>
                 <h1>Inicio</h1>
-                <p>{{1+1}}</p> 
+               
                 <div id="myAppFor">
-                    <h1> hello world </h1>
-                    <p> desde vue</p>
-                   <p>{{1+1}}</p>  
-                   <p>{{true}}</p>  
-                    <p>{{true?'activo':'inactivo'}}</p>
-                    propiedades reactivas desde data(){}:
-                    <p> nombre: <strong>{{namej}} {{apellido}}</strong> </p>
-                    <p>{{mensaje}}</p>
-                    <button class="btn btn-dark" v-on:click="cambiarName()">Change Name</button>
-                    <button class="btn btn-dark" v-on:click="changeApellido()"> Change last name</button>
+                    
+                    <button class="btn btn-dark" v-on:click="imprimir()">Imprimir</button>
+                    <h4>Estudiantes uce</h4>
+                    <input type="text" v-model="nombre" v-on:keypress.enter="ingresarEstu">
+                    <h1>{{nombre}}</h1>
+                    <hr>
+                    <h1>Lista estudiantes</h1>
+
+                    <!-- <ul>
+                       <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>{{arreglo}}</li>
+                        <li>{{arreglo[0]}}</li>
+                        <li>{{arreglo[1].nombre}}</li>
+                        <li>{{arreglo[2]}}</li>
+                        <li>{{arreglo[3].apellido}}</li>
+                        <li>{{arreglo[4]}}</li>
+                        <li>{{arreglo[5].nombre + arreglo[5].apellido }}</li>
+                        <li>{{arreglo[6]}}</li>
+                        <li>{{arreglo[7]}}</li>
+                        <li>{{arreglo[8]}}</li>
+                        <li>{{arreglo[9]}}</li>
+                        <li>{{arreglo[10]}}</li>
+                        <li> <strong> Con v-for</strong></li>
+                       
+                        
+                    </ul>-->
+                    <ul>
+
+                      <!--  <li v-for="estu in arreglo"> 
+                            <span>{{estu.nombre}}</span>
+                            <blockquote>{{estu.apellido}}</blockquote>
+                        </li>-->
+                      <!--  <li v-for="{nombre,apellido} in arreglo"> 
+                            <span>{{nombre}}</span>
+                            <blockquote>{{apellido}}</blockquote>
+                        </li>
+                        <li><strong>otro ejemplo</strong></li>
+                        <li v-for="(estu,index) in arreglo"> 
+                            <span>{{index+1}} - {{estu}}</span>
+                            
+                        </li> -->
+
+                        <li v-for="({nombre,apellido},index) in arreglo"> 
+                            <span>{{index+1}} - {{nombre}}</span>
+                            <blockquote>{{apellido}}</blockquote>
+                        </li>
+                    </ul>
+
+                    
                 </div>
                 <h1>fin</h1>
             </section>
@@ -36,6 +79,6 @@
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    
-    <script src="./js/vfor.js"></script>
+    <script src="../js/vfor.js"></script>
 </body>
 </html>
