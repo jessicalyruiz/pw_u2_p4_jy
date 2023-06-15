@@ -29,7 +29,8 @@ const app = Vue.createApp({
 
          operarNumeros  ()  {
             console.log('operar numeros')
-            let operacion = llenar('=');
+            this.llenar('=');
+            let operacion = this.pantalla
             let num1 = '', num2 = '', simbolo = '';
             let op = false;
             for (let i = 0; i < operacion.length; i++) {
@@ -50,46 +51,35 @@ const app = Vue.createApp({
                     }
                 }
             }
-            let numero1 = parseFloat(num1);
-            let numero2 = parseFloat(num2);
+            this.num1 = parseFloat(num1);
+            this.num2 = parseFloat(num2);
             switch (simbolo) {
                 case '/':
                     console.log('dividir')
-                    let r = dividir(numero1, numero2)
+                    let r = this.dividir()
                     console.log(r)
                     this.resultado = r
                     break;
                 case '*':
-                    this.resultado = multiplicar(numero1, numero2)
+                    this.resultado = this.multiplicar()
                     break;
                 case '+':
-                    this.resultado = sumar(numero1, numero2)
+                    this.resultado = this.sumar()
                     break;
                 case '-':
-                    this.resultado.value = restar(numero1, numero2)
+                    this.resultado = this.restar()
                     break;
             }
         },
-        /*
-        const convertir=(idcampo)=>{
-            return parseFloat(document.getElementById(idcampo).value);
-        }*/
 
          llenar  (dato)  {
             console.log('llenar ' + dato)
-
-            let prueba='';
-            console.log(prueba)
-            prueba+=dato;
-            console.log(prueba)
-
-
-            let operacion = this.pantalla
-            console.log(operacion)
-            operacion += dato;
-            console.log(operacion)
-            this.pantantalla+=dato
-            return operacion
+            let operacion=this.pantalla
+            operacion+=dato
+            console.log('operacion: '+ operacion)
+            this.pantalla=operacion
+            console.log('pantalla'+this.pantalla)
+           
         },
 
 
