@@ -59,7 +59,7 @@ const app=Vue.createApp({
       console.log(estudiantes)
    },
    ingresarEstu( event){
-         console.log('vamos a agregar: ')
+         //console.log('vamos a agregar: ')
          
          console.log(this.nombre)
          this.estudiantes
@@ -71,7 +71,7 @@ const app=Vue.createApp({
             console.log('presiono enter')
             const newStudent={
                nombre:this.nombre,
-               apellido:'new apellido'
+               apellido:this.apellido
             }
             this.arreglo.push(newStudent)
          }else {console.log('no enter')}
@@ -82,7 +82,7 @@ const app=Vue.createApp({
       console.log(this.nombre)
          const newStudent={
             nombre:this.nombre,
-            apellido:'new apellido'
+            apellido:this.apellido
          }
          this.arreglo.push(newStudent)
      

@@ -1,0 +1,40 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calcu{
+    display: grid;
+    grid-template-columns: repeat(4,75px);
+    /*grid-template-rows: repeat(4,75px);*/
+    background-color: pink;
+    padding: 20px;
+    border-radius: 35px;
+    box-shadow: 20px 10px 50px 20px black;
+}
+
+#btnac{
+    grid-column: span 2;
+}
+.display{
+    grid-column: span 4;
+}
+
+@font-face {
+    font-family: 'charlinda';
+    src: url('../fonts/charlinda.ttf') format('truetype');
+}
+
+h1{
+    font-family: 'charlinda';
+    padding: 30px;
+    text-align: center;
+}
+
+.btn{
+    margin: 6px;
+    border-radius: 35px;
+    background-color: rgb(253, 222, 227);
+    box-shadow: 5px 5px 5px 1px;
+}

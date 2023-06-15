@@ -19,8 +19,7 @@
                
                 <div id="myAppFor">
                     
-                    <button class="btn btn-dark" v-on:click="imprimir()">Imprimir</button>
-                    <h4>Estudiantes uce</h4>
+                             <h4>Estudiantes uce</h4>
                     <input type="text" v-model="nombre" v-on:keypress.enter="ingresarEstu">
                     <h1>{{nombre}}</h1>
                     <hr>
@@ -66,7 +65,9 @@
 
                         <li v-for="({nombre,apellido},index) in arreglo"> 
                             <span>{{index+1}} - {{nombre}}</span>
-                            <blockquote>{{apellido}}</blockquote>
+                            <blockquote v-if="apellido!==undefinded"> Apellido: {{apellido}}</blockquote>
+                            <blockquote v-show="apellido!==undefinded"> Apellido v show: {{apellido}}</blockquote>
+
                         </li>
                     </ul>
 
