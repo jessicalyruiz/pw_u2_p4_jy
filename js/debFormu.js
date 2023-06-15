@@ -24,8 +24,12 @@ const app=Vue.createApp({
          ciudad:this.ciudad,
       }
       this.estudiantes.push(newEstudiante);
-
- 
+      this.nombre='';
+      this.apellido=''
+      this.cedula=''
+      this.genero=''
+      this.ciudad=''
+      
    }
    
    }
